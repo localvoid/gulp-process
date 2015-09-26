@@ -61,6 +61,9 @@ function start(name, command, args, opts) {
   if (!p) {
     p = processes[name] = new GulpProcess(command, args, opts);
   }
+
+  process.on('exit', function() { p.stop(); });
+
   p.start();
 }
 

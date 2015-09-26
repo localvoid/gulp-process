@@ -1,6 +1,6 @@
 {
   "name": "gulp-process",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "gulp plugin for running and automatically restarting processes",
   "license": "MIT",
   "author": {
