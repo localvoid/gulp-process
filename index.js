@@ -36,8 +36,10 @@ GulpProcess.prototype.start = function() {
         }
       });
 
-  p.stdout.on('data', function(b) { gutil.log(b.toString()); });
-  p.stderr.on('data', function(b) { gutil.log(b.toString()); });
+  if (!this.opts.stdio) {
+    p.stdout.on('data', function(b) { gutil.log(b.toString()); });
+    p.stderr.on('data', function(b) { gutil.log(b.toString()); });
+  }
 };
 
 GulpProcess.prototype.stop = function() {
